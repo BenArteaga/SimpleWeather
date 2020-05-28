@@ -55,18 +55,38 @@ class CurrentWeather {
     func downloadWeatherDetails(completed: @escaping DownloadComplete) {
         //The URLSession class is the Apple class that provides the API for downloading content
         let session = URLSession.shared
-        let url = URL(string: CURRENT_WEATHER_URL)
+        let url = URL(string: CURRENT_WEATHER_URL)!
         
         //dataTask function retrieves the contents of our URL and supplies the data, response, and error in a completion handler
         session.dataTask(with: url) { (data, response, error) in
                 if let responseData = data {
                     do {
                         let json = try  JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
+                        if let dict = json as? Dictionary<String, AnyObject> {
+                            if let name = dict["name"] as? String {
+                                self._cityName = name.capitalized
+                            }
+                            
+                            if let weather = dict["weather"] as? [Dictionary<String, AnyObject>] {
+                                if let main = weather[0]["main"] as? String {
+                                    self._weatherType = main.capitalized
+                                }
+                            }
+                            
+                            if let main = dict["main"] as? Dictionary<String, AnyObject> {
+                                if let currentTemperature = main["temp"] as? Double {
+                                    let kelviToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
+                                    let kelvinToFarenheit = Double(round(10 * kelviToFarenheitPreDivision/10))
+                                    self._currentTemp = kelvinToFarenheit
+                                }
+                            }
+                        }
                         print(json)
                     } catch {
                         print("Could not serialize")
                     }
                 }
+            completed()
             } .resume()
     }
     

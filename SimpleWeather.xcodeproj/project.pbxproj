@@ -17,6 +17,7 @@
 		85909A7D247ABDA4007CA6D0 /* SimpleWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85909A7C247ABDA4007CA6D0 /* SimpleWeatherUITests.swift */; };
 		85909A8B247D8CF0007CA6D0 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85909A8A247D8CF0007CA6D0 /* CurrentWeather.swift */; };
 		85909A8D247D8F75007CA6D0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85909A8C247D8F75007CA6D0 /* Constants.swift */; };
+		85909A8F247D9434007CA6D0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85909A8E247D9434007CA6D0 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		85909A7E247ABDA4007CA6D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85909A8A247D8CF0007CA6D0 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		85909A8C247D8F75007CA6D0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		85909A8E247D9434007CA6D0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				85909A68247ABDA3007CA6D0 /* Info.plist */,
 				85909A8A247D8CF0007CA6D0 /* CurrentWeather.swift */,
 				85909A8C247D8F75007CA6D0 /* Constants.swift */,
+				85909A8E247D9434007CA6D0 /* Location.swift */,
 			);
 			path = SimpleWeather;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				85909A5F247ABD9D007CA6D0 /* ViewController.swift in Sources */,
 				85909A5B247ABD9D007CA6D0 /* AppDelegate.swift in Sources */,
 				85909A8B247D8CF0007CA6D0 /* CurrentWeather.swift in Sources */,
+				85909A8F247D9434007CA6D0 /* Location.swift in Sources */,
 				85909A5D247ABD9D007CA6D0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +447,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y3DAPHRXQ3;
 				INFOPLIST_FILE = SimpleWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +466,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y3DAPHRXQ3;
 				INFOPLIST_FILE = SimpleWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
