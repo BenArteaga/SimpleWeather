@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,6 +7,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--City Search View-->
+        <scene sceneID="IqM-AY-BFu">
+            <objects>
+                <viewController id="S0V-rt-H2m" customClass="CitySearchView" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HoY-Qn-azA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wUr-cl-yyS">
+                                <rect key="frame" x="140.5" y="191" width="133" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwY-gu-WoM">
+                                <rect key="frame" x="167" y="258" width="80" height="45"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4CN-Fy-hUP"/>
+                                    <constraint firstAttribute="width" constant="80" id="z3y-fd-XB2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31764705882352939" green="0.64313725490196072" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CwY-gu-WoM" firstAttribute="top" secondItem="wUr-cl-yyS" secondAttribute="bottom" constant="33" id="JUd-eh-V4D"/>
+                            <constraint firstItem="BtP-9q-Rq8" firstAttribute="bottom" secondItem="CwY-gu-WoM" secondAttribute="bottom" constant="505" id="cK5-z0-036"/>
+                            <constraint firstItem="CwY-gu-WoM" firstAttribute="centerX" secondItem="wUr-cl-yyS" secondAttribute="centerX" id="eDH-Pe-TMF"/>
+                            <constraint firstItem="CwY-gu-WoM" firstAttribute="centerX" secondItem="HoY-Qn-azA" secondAttribute="centerX" id="wXm-kj-Hek"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BtP-9q-Rq8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CC7-k6-uNJ"/>
+                    <connections>
+                        <outlet property="enterButton" destination="CwY-gu-WoM" id="zug-U4-WlB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSg-rg-SRO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="-555.13392857142856"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -15,6 +59,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1j-6M-6ig">
+                                <rect key="frame" x="297" y="52" width="97" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Change City">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S0V-rt-H2m" kind="show" id="arc-Zi-bex"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1XU-Ib-Ugd">
                                 <rect key="frame" x="126.5" y="259" width="161" height="378"/>
                                 <subviews>
@@ -50,6 +104,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.31764705882352939" green="0.64313725490196072" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1j-6M-6ig" secondAttribute="trailing" constant="20" id="3S5-Xt-rej"/>
+                            <constraint firstItem="d1j-6M-6ig" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="8qV-tf-Ffp"/>
                             <constraint firstItem="1XU-Ib-Ugd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fl1-cE-Ctc"/>
                             <constraint firstItem="1XU-Ib-Ugd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ipt-cr-gtL"/>
                         </constraints>

@@ -18,6 +18,7 @@
 		85909A8B247D8CF0007CA6D0 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85909A8A247D8CF0007CA6D0 /* CurrentWeather.swift */; };
 		85909A8D247D8F75007CA6D0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85909A8C247D8F75007CA6D0 /* Constants.swift */; };
 		85909A8F247D9434007CA6D0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85909A8E247D9434007CA6D0 /* Location.swift */; };
+		85D7EB8C24800DE500711B4E /* CitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D7EB8B24800DE500711B4E /* CitySearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		85909A8A247D8CF0007CA6D0 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		85909A8C247D8F75007CA6D0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85909A8E247D9434007CA6D0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		85D7EB8B24800DE500711B4E /* CitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				85909A5A247ABD9D007CA6D0 /* AppDelegate.swift */,
 				85909A5C247ABD9D007CA6D0 /* SceneDelegate.swift */,
+				85D7EB8B24800DE500711B4E /* CitySearchView.swift */,
 				85909A5E247ABD9D007CA6D0 /* ViewController.swift */,
 				85909A60247ABD9D007CA6D0 /* Main.storyboard */,
 				85909A63247ABDA3007CA6D0 /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85909A8D247D8F75007CA6D0 /* Constants.swift in Sources */,
+				85D7EB8C24800DE500711B4E /* CitySearchView.swift in Sources */,
 				85909A5F247ABD9D007CA6D0 /* ViewController.swift in Sources */,
 				85909A5B247ABD9D007CA6D0 /* AppDelegate.swift in Sources */,
 				85909A8B247D8CF0007CA6D0 /* CurrentWeather.swift in Sources */,
@@ -449,11 +453,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3DAPHRXQ3;
 				INFOPLIST_FILE = SimpleWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.barteaga.SimpleWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -468,11 +473,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3DAPHRXQ3;
 				INFOPLIST_FILE = SimpleWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.barteaga.SimpleWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
