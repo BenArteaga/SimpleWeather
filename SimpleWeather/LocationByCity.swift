@@ -1,19 +1,18 @@
 //
-//  Location.swift
+//  LocationBtCity.swift
 //  SimpleWeather
 //
-//  Created by Ben Arteaga on 5/26/20.
+//  Created by Ben Arteaga on 5/28/20.
 //  Copyright © 2020 Ben Arteaga. All rights reserved.
 //
 
 import Foundation
 import CoreLocation
 
-class Location {
-    static var sharedInstance = Location()
+class LocationByCity {
+    static var sharedInstance = LocationByCity()
     private init() {}
     
-    var latitude: Double!
-    var longitude: Double!
     var cityName: String!
+    
 }

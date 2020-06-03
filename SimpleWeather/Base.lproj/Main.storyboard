@@ -31,6 +31,9 @@
                                 <state key="normal" title="Enter">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="enterWasPressed:" destination="S0V-rt-H2m" eventType="touchUpInside" id="nxa-mz-JCk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.31764705882352939" green="0.64313725490196072" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,6 +47,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CC7-k6-uNJ"/>
                     <connections>
+                        <outlet property="cityTextField" destination="wUr-cl-yyS" id="sef-nt-MeQ"/>
                         <outlet property="enterButton" destination="CwY-gu-WoM" id="zug-U4-WlB"/>
                     </connections>
                 </viewController>
@@ -66,7 +70,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="S0V-rt-H2m" kind="show" id="arc-Zi-bex"/>
+                                    <segue destination="S0V-rt-H2m" kind="show" identifier="VCToCitySearchView" id="arc-Zi-bex"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1XU-Ib-Ugd">

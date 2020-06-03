@@ -14,9 +14,25 @@
             filePath = "SimpleWeather/CurrentWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "downloadWeatherDetails(completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C903DA56-B4A3-4FA6-A4F1-000FEA070402"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleWeather/CitySearchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "enterWasPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

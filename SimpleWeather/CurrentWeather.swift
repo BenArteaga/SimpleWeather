@@ -13,6 +13,7 @@ class CurrentWeather {
     fileprivate var _date: String!
     fileprivate var _weatherType: String!
     fileprivate var _currentTemp: Double!
+    fileprivate var _byCity: Bool!
     
     //getter for _cityName
     var cityName: String {
@@ -51,11 +52,30 @@ class CurrentWeather {
         return _currentTemp
     }
     
+    var byCity: Bool {
+        get {
+            if _byCity == nil {
+                return false
+            }
+            return _byCity
+        }
+        set {
+            _byCity = newValue
+        }
+    }
+    
     //DownloadComplete is our custom closure
     func downloadWeatherDetails(completed: @escaping DownloadComplete) {
         //The URLSession class is the Apple class that provides the API for downloading content
         let session = URLSession.shared
-        let url = URL(string: CURRENT_WEATHER_URL)!
+        var urlString = ""
+        if self._byCity! {
+            urlString = BYCITY_URL
+        }
+        else {
+            urlString = CURRENT_WEATHER_URL
+        }
+        let url = URL(string: urlString)!
         
         //dataTask function retrieves the contents of our URL and supplies the data, response, and error in a completion handler
         session.dataTask(with: url) { (data, response, error) in

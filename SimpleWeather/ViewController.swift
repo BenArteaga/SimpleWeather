@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, CitySearchViewDelegate {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
@@ -42,7 +42,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             currentLocation = locationManager.location
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
-            currentWeather.downloadWeatherDetails {
+            currentWeather.byCity = false
+            currentWeather.downloadWeatherDetails() {
                 DispatchQueue.main.async {
                     self.updateMainUI()
                 }
@@ -58,6 +59,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         currentWeatherTypeLabel.text = currentWeather.weatherType
         locationLabel.text = currentWeather.cityName
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "VCToCitySearchView" {
+            let displayVC = segue.destination as! CitySearchView
+            displayVC.delegate = self
+        }
+    }
+    
+    func doSomethingWith(data: CurrentWeather!) {
+        currentWeather.byCity = true
+        currentWeather.downloadWeatherDetails() {
+            DispatchQueue.main.async {
+                self.updateMainUI()
+            }
+        }
     }
 
 
